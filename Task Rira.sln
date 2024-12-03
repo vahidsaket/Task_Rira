@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB76249E-1816-4C0F-81A5-14AAB6D4D39B}"
+	ProjectSection(SolutionItems) = preProject
+		src\TaskRira.Core\TaskRira.Core.csproj = src\TaskRira.Core\TaskRira.Core.csproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRira.Api", "src\Task_Rira.Api\TaskRira.Api.csproj", "{90C98367-E438-4C55-805E-DAD647AECA99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grpc.Server", "src\Grpc.Server\Grpc.Server.csproj", "{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRira.Application", "src\TaskRira.Application\TaskRira.Application.csproj", "{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRira.DataAccess", "src\TaskRira.DataAccess\TaskRira.DataAccess.csproj", "{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRira.Shared", "src\TaskRira.Shared\TaskRira.Shared.csproj", "{D19C390C-13A2-4B34-B9A6-5A40C397B159}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90C98367-E438-4C55-805E-DAD647AECA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C98367-E438-4C55-805E-DAD647AECA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C98367-E438-4C55-805E-DAD647AECA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C98367-E438-4C55-805E-DAD647AECA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19C390C-13A2-4B34-B9A6-5A40C397B159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19C390C-13A2-4B34-B9A6-5A40C397B159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19C390C-13A2-4B34-B9A6-5A40C397B159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19C390C-13A2-4B34-B9A6-5A40C397B159}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90C98367-E438-4C55-805E-DAD647AECA99} = {AB76249E-1816-4C0F-81A5-14AAB6D4D39B}
+		{9D8C07AD-3B69-4E3E-9A70-A3B4FC31D7F7} = {AB76249E-1816-4C0F-81A5-14AAB6D4D39B}
+		{DF42FFCC-D8D0-4260-8F1E-6F79405E0F05} = {AB76249E-1816-4C0F-81A5-14AAB6D4D39B}
+		{CEC383FA-2B94-443E-9F8B-D5D4AD16A77E} = {AB76249E-1816-4C0F-81A5-14AAB6D4D39B}
+		{D19C390C-13A2-4B34-B9A6-5A40C397B159} = {AB76249E-1816-4C0F-81A5-14AAB6D4D39B}
+	EndGlobalSection
+EndGlobal

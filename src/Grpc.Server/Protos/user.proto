@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc.Server";
+
+
+
+// The greeting service definition.
+service UserGrpcService {
+  // Sends a greeting
+  rpc GetAllUser (Empty) returns (Users);
+  rpc UserUpdate (UpdateUserDetailRequest) returns (UpdateUserResponseModel);
+  rpc UserCreate (CreateUserDetailRequest) returns (CreateUserResponseModel);
+  rpc UserGetById (UserGetByIdRequestModel) returns (UserDetails);
+  rpc UserDelete (UserDeleteRequestModel) returns (UserDetails);
+}
+
+// The request message containing the user's name.
+message UserDetails {
+  int32 userId = 1;
+  string name = 2;
+  string family = 3;
+  string nationalCode = 4;
+  string birthDate = 5;
+}
+
+message Users{
+	repeated UserDetails items = 1;
+}
+
+message UpdateUserDetailRequest {
+	UserDetails user = 1;
+}
+
+message CreateUserDetailRequest {
+	  string name = 1;
+	  string family = 2;
+	  string nationalCode = 3;
+	  string birthDate = 4;
+}
+
+message UpdateUserResponseModel {
+	int32 id = 1;
+}
+
+message CreateUserResponseModel {
+	int32 id = 1;
+}
+
+message UserGetByIdRequestModel {
+	int32 id = 1;
+}
+
+message UserDeleteRequestModel {
+	int32 id = 1;
+}
+
+message Empty{
+}
