@@ -1,6 +1,7 @@
 ﻿using Grpc.Net.Client;
 using Grpc.Server;
 using Microsoft.AspNetCore.Mvc;
+using Task_Rira.Api.Models;
 
 namespace Task_Rira.Controllers
 {
@@ -19,76 +20,79 @@ namespace Task_Rira.Controllers
         }
 
         [HttpGet(nameof(GetAllUserAsync))]
-        public async Task<Users> GetAllUserAsync()
+        public async Task<IActionResult> GetAllUserAsync()
         {
             try
             {
                 Empty empty = new Empty();
                 Users response = await _client.GetAllUserAsync(empty);
-                return response;
+                return Ok(ApiResult<Users>.Success(response));
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
             }
-            return null;
         }
 
         [HttpPost(nameof(CreateUserAsync))]
-        public async Task<CreateUserResponseModel> CreateUserAsync(CreateUserDetailRequest request)
+        public async Task<IActionResult> CreateUserAsync(CreateUserDetailRequest request)
         {
             try
             {
                 CreateUserResponseModel response = await _client.UserCreateAsync(request);
-                return response;
+                return Ok(ApiResult<CreateUserResponseModel>.Success(response));
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
             }
-            return null;
         }
 
 
         [HttpPut(nameof(UpdateUserAsync))]
-        public async Task<UpdateUserResponseModel> UpdateUserAsync(UpdateUserDetailRequest request)
+        public async Task<IActionResult> UpdateUserAsync(UpdateUserDetailRequest request)
         {
             try
             {
                 UpdateUserResponseModel response = await _client.UserUpdateAsync(request);
-                return response;
+                return Ok(ApiResult<UpdateUserResponseModel>.Success(response));
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
             }
-            return null;
         }
 
 
-        [HttpGet(nameof(GetByIdAsync))]
-        public async Task<UserDetails> GetByIdAsync(UserGetByIdRequestModel request)
+        [HttpPost(nameof(GetByIdAsync))]
+        public async Task<IActionResult> GetByIdAsync(UserGetByIdRequestModel request)
         {
             try
             {
+                if (request == null || request.Id <= 0)
+                    return NotFound();
+
                 UserDetails response = await _client.UserGetByIdAsync(request);
-                return response;
+                return Ok(ApiResult<UserDetails>.Success(response));
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
             }
-            return null;
         }
 
         [HttpDelete(nameof(DeleteUserAsync))]
-        public async Task<UserDetails> DeleteUserAsync(UserDeleteRequestModel request)
+        public async Task<IActionResult> DeleteUserAsync(UserDeleteRequestModel request)
         {
             try
             {
                 UserDetails response = await _client.UserDeleteAsync(request);
-                return response;
+                return Ok(ApiResult<UserDetails>.Success(response));
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
             }
-            return null;
         }
     }
 }
